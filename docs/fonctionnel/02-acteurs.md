@@ -8,7 +8,7 @@ Elle peut :
 
 - consulter le planning (vues mois, semaine, jour) ;
 - gérer ses élèves et leurs carnets de cours ;
-- inscrire, déplacer et retirer des élèves sur les cours ;
+- inscrire, reporter et retirer des élèves sur les cours ;
 - gérer les disponibilités, les fermetures et les rendez-vous privés ;
 - enregistrer les paiements (moyen, statut) et consulter les dettes ;
 - retracer toutes les dates de présence d'un élève.

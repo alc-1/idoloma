@@ -40,20 +40,21 @@ L'avancement d'un élève dans son carnet est noté « n° du cours / total » (
 Un élève peut continuer à venir après avoir utilisé tous les cours de son carnet. Les cours suivants sont alors rattachés à un nouveau carnet non payé : ils constituent une dette. Ce nouveau carnet a une taille par défaut de 5 cours ; elle peut être modifiée une fois la taille confirmée avec l'élève.
 - Étant donné un élève ayant utilisé tous les cours de son carnet, quand il vient à un cours supplémentaire, alors ce cours est rattaché à un nouveau carnet non payé et l'élève est signalé en dette.
 
-## Déplacements, absences, fermetures
+## Report, absences, fermetures
 
-### RG-010 – Déplacement
-Aurélie peut déplacer un élève d'un cours de groupe vers un autre cours de groupe de la même semaine, y compris un cours déjà complet. Le décompte du carnet est inchangé. Le cours d'origine est conservé et barré pour tracer le déplacement.
-- Étant donné un élève inscrit le mardi et un cours complet le jeudi de la même semaine, quand Aurélie déplace l'élève au jeudi, alors le déplacement est accepté et le cours du mardi est conservé et barré.
-- Étant donné un cours dans une autre semaine, quand Aurélie tente d'y déplacer l'élève, alors le déplacement est refusé.
+### RG-010 – Report et rattrapage
+Aurélie peut reporter un élève d'un cours de groupe vers un autre cours de groupe de la même semaine, y compris un cours déjà complet. Le cours de destination est un rattrapage, accordé à la discrétion d'Aurélie. Le cours d'origine est conservé et barré pour tracer le report. Le décompte du carnet est inchangé : le cours d'origine n'utilise pas le carnet, le rattrapage l'utilise comme tout cours auquel l'élève participe.
+- Étant donné un élève inscrit le mardi et un cours complet le jeudi de la même semaine, quand Aurélie reporte l'élève au jeudi, alors le report est accepté, le jeudi est un rattrapage et le cours du mardi est conservé et barré.
+- Étant donné un cours dans une autre semaine, quand Aurélie tente d'y reporter l'élève, alors le report est refusé.
 
-### RG-011 – Absence
-Une absence sans justification valide utilise le carnet par défaut. Une absence justifiée et validée par Aurélie ne l'utilise pas et peut donner lieu à un rattrapage (RG-012).
+### RG-011 – Absence et retrait
+Une absence sans justification valide, ou le retrait d'un élève d'un cours, utilise le carnet par défaut. Une absence justifiée et validée par Aurélie ne l'utilise pas et permet un rattrapage sur un autre jour de la même semaine (RG-010).
 - Étant donné un élève absent sans justification valide, quand le cours a lieu, alors le carnet est utilisé.
-- Étant donné une absence justifiée et validée par Aurélie, quand le cours a lieu, alors le carnet n'est pas utilisé.
+- Étant donné un élève retiré d'un cours sans justification, quand Aurélie le retire, alors le carnet est utilisé.
+- Étant donné une absence justifiée et validée par Aurélie, quand le cours a lieu, alors le carnet n'est pas utilisé et un rattrapage est possible sur un autre jour de la même semaine.
 
-### RG-012 – Rattrapage
-Un rattrapage est accordé à la discrétion d'Aurélie, notamment pour une fermeture de l'atelier ou une absence justifiée. Il utilise le carnet comme tout cours auquel l'élève participe.
+### RG-012 – Rattrapage (abandonnée)
+Fusionnée dans RG-010 : rattrapage et déplacement désignent le même concept. L'identifiant est conservé.
 
 ### RG-013 – Fermeture
 Une période de fermeture (vacances, maladie…) rend les cours concernés indisponibles. Les cours restent enregistrés avec leur statut et la raison de la fermeture. Le carnet des élèves inscrits n'est pas utilisé. La série de chaque élève inscrit est décalée : un cours est ajouté à la fin de sa série pour chaque cours fermé. Ce cours ajouté exige une place libre ; le cas d'un cours complet n'est pas traité, car il ne se présente pas dans l'organisation d'Aurélie.
@@ -66,6 +67,19 @@ Pour les cours de groupe, un paiement porte toujours sur un carnet entier. Le mo
 
 ### RG-015 – Paiement en retard
 Un élève peut être inscrit et suivre des cours sans avoir payé son carnet. Le défaut de paiement est un statut visible (dette) et ne bloque jamais l'inscription ni la participation.
+
+## Disponibilités
+
+### RG-020 – Modification d'une disponibilité
+Une disponibilité est définie sur une plage de temps (par exemple de janvier à septembre). Elle est modifiée ou archivée sur une plage de temps donnée (par exemple à partir d'octobre). La modification ou l'archivage est refusé si au moins un élève inscrit à un cours concerné est impacté : l'application garantit qu'aucun élève n'est impacté.
+- Étant donné une disponibilité de janvier à septembre sans élève inscrit à partir d'octobre, quand Aurélie la modifie à partir d'octobre, alors la modification est acceptée.
+- Étant donné un élève inscrit à un cours d'octobre, quand Aurélie tente de modifier la disponibilité à partir d'octobre, alors la modification est refusée.
+
+## Corrections
+
+### RG-019 – Correction par action inverse
+Une action (report, retrait, absence, fermeture, paiement…) se corrige par l'action inverse. Il n'y a pas de fonction générique d'annulation.
+- Étant donné un élève retiré d'un cours par erreur, quand Aurélie l'inscrit de nouveau à ce cours, alors la situation est rétablie.
 
 ## Traçabilité et isolation
 

@@ -21,8 +21,8 @@ Reproduire numériquement l'agenda papier tel qu'il existe, en le rendant plus f
 - **Planning** : disponibilités, cours de groupe, rendez-vous privés, avec leurs participants.
 - **Gestion des élèves et des carnets** : suivi de l'avancement (n° du cours / total du carnet : 5, 15, 30 ou 60).
 - **Gestion des paiements** : moyen de paiement (en ligne, cash) et statut de paiement par carnet. Le paiement en retard est autorisé et affiché comme dette, jamais bloqué.
-- **Traçabilité** : historique des opérations, des présences, des déplacements et des fermetures (avec leur raison).
-- **Vues** : mois (lecture seule, disponibilités), semaine (détail et déplacement par glisser-déposer au sein de la semaine), jour (édition complète).
+- **Traçabilité** : historique des opérations, des présences, des reports et des fermetures (avec leur raison).
+- **Vues** : mois (lecture seule, disponibilités), semaine (détail et report par glisser-déposer au sein de la semaine), jour (édition complète).
 
 ## Phases
 
@@ -36,6 +36,8 @@ Reproduire numériquement l'agenda papier tel qu'il existe, en le rendant plus f
 - Stages (événements de plusieurs jours).
 - Événements externes notés sur l'agenda papier (à ignorer).
 - Concept d'« élève fantôme » (abandonné).
+- Vue globale des dettes de l'atelier (liste des élèves à relancer) : voulue, mais pas en V1. La dette reste visible dans le planning et sur la fiche élève.
+- Contact et notes sur la fiche élève : la V1 ne conserve que le nom et le prénom.
 
 ## Utilisateurs
 
@@ -50,8 +52,8 @@ Les paramètres de l'atelier (6 places, carnets de 5/15/30/60, seuils d'alerte) 
 
 - Capacité d'un cours de groupe : 6 places.
 - Par défaut, 1 seul cours de groupe par jour ; plusieurs le même jour restent exceptionnels.
-- Un élève déplacé dans la semaine garde son décompte de carnet ; le cours d'origine est conservé et barré.
-- Un rattrapage utilise le carnet comme tout cours auquel l'élève participe ; il est accordé à la discrétion d'Aurélie.
+- Un élève reporté dans la semaine suit un rattrapage : son décompte de carnet est inchangé et le cours d'origine est conservé et barré. Le rattrapage est accordé à la discrétion d'Aurélie.
+- Une disponibilité est définie sur une plage de temps ; la modifier ou l'archiver sur une plage donnée est refusé si un élève en est impacté.
 - Une période de fermeture (vacances, maladie…) conserve sa raison.
 - Les rendez-vous privés sont facturés à part (hors carnet).
 

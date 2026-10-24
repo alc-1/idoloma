@@ -4,6 +4,8 @@ Source unique des points non tranchés. Quand une question est résolue, reporte
 
 ## Règles métier
 
+- Fermeture et rattrapage : une fermeture décale la série (RG-013) ; donne-t-elle aussi droit à un rattrapage sur un autre jour de la même semaine, ou le décalage suffit-il ?
+
 
 ## Vues
 

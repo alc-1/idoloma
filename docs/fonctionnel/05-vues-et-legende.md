@@ -24,7 +24,7 @@ Vision affinée, avec une seule fonctionnalité d'édition.
 - États de chaque participant (voir « Légende »).
 - Détail des rendez-vous privés, affichés sous la forme « Christelle 14h ».
 - Cours grisé à partir de 5 élèves (RG-003) ; cours annulable mis en évidence (RG-004).
-- Édition : déplacer un élève d'un cours de groupe à un autre de la même semaine par glisser-déposer (RG-010).
+- Édition : reporter un élève d'un cours de groupe à un autre de la même semaine par glisser-déposer (RG-010).
 
 ### Vue jour
 
@@ -33,7 +33,7 @@ Vision détaillée, avec l'édition complète sur la journée concernée. Action
 - inscrire un élève (RG-007) ;
 - retirer un élève ;
 - marquer une absence, justifiée ou non (RG-011) ;
-- accorder un rattrapage (RG-012) ;
+- reporter un élève, ce qui crée un rattrapage (RG-010) ;
 - saisir un paiement (RG-014, RG-018) ;
 - créer un rendez-vous privé (RG-005) ;
 - enregistrer une fermeture avec sa raison (RG-013).
@@ -58,7 +58,7 @@ La liste des actions pourra évoluer si des besoins manquent.
 | Élève | en dette |
 | Élève | dernier cours du carnet |
 | Élève | rattrapage |
-| Élève | déplacé (cours d'origine barré) |
+| Élève | reporté (cours d'origine barré) |
 | Cours | presque plein ou complet (grisé) |
 | Cours | annulable (moins de 3 élèves) |
 | Cours | fermé, avec sa raison |
