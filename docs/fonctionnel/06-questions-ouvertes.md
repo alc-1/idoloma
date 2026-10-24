@@ -4,13 +4,13 @@ Source unique des points non tranchés. Quand une question est résolue, reporte
 
 ## Règles métier
 
-- Fermeture et rattrapage : une fermeture décale la série (RG-013) ; donne-t-elle aussi droit à un rattrapage sur un autre jour de la même semaine, ou le décalage suffit-il ?
-
+- Retirer une absence (RG-019) alors que sa place a été reprise et que le cours est complet : accepté, comme un report sur un cours complet ?
 
 ## Vues
 
-- Légende : choix des couleurs et marqueurs à définir (celle du papier est contradictoire).
-- Fiche élève : lecture seule, ou permet-elle aussi de saisir un paiement et de modifier un carnet ?
+- Légende : couleurs et marqueurs proposés au mieux (best effort) à la maquette.
+- États d'absence (justifiée, non justifiée) : à représenter dans la légende ?
+- Vue mois : un cours à 5 élèves est grisé mais a encore une place libre. Est-il mis en évidence comme disponible ? Et un cours au-delà de 6 après un report affiche-t-il 0 place libre ?
 - Premier cours d'un carnet et rose « à élucider » : écartés de la légende, à confirmer.
 
 ## Périmètre et architecture

@@ -31,7 +31,6 @@ Vision affinée, avec une seule fonctionnalité d'édition.
 Vision détaillée, avec l'édition complète sur la journée concernée. Actions :
 
 - inscrire un élève (RG-007) ;
-- retirer un élève ;
 - marquer une absence, justifiée ou non (RG-011) ;
 - reporter un élève, ce qui crée un rattrapage (RG-010) ;
 - saisir un paiement (RG-014, RG-018) ;
@@ -44,18 +43,20 @@ La liste des actions pourra évoluer si des besoins manquent.
 
 Écran propre à un élève, important dès la V1. Il permet de :
 
-- consulter ses carnets de cours : décompte, état de paiement, dette (RG-008, RG-009, RG-015) ;
+- consulter ses carnets de cours : décompte, état de paiement, impayé, dette (RG-008, RG-009, RG-015) ;
+- saisir ou modifier le paiement d'un carnet (RG-014) ;
 - retracer toutes les dates auxquelles l'élève a été présent (RG-016).
 
 ## Légende
 
-États à représenter. La représentation (couleur, barré, marqueur…) reste à définir.
+États à représenter. La représentation (couleur, barré, marqueur…) sera proposée au mieux (best effort) lors de la maquette, puis ajustée avec Aurélie.
 
 | Objet | État |
 |---|---|
 | Élève | carnet payé en ligne |
 | Élève | carnet payé cash |
-| Élève | en dette |
+| Élève | impayé (carnet non payé, aucun cours utilisé) |
+| Élève | en dette (carnet non payé, au moins un cours utilisé) |
 | Élève | dernier cours du carnet |
 | Élève | rattrapage |
 | Élève | reporté (cours d'origine barré) |

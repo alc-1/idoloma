@@ -12,14 +12,15 @@
 ## Variantes et erreurs
 
 - Si un seul cours de la série n'a pas de place libre, l'inscription est refusée.
+- Si la série dépasse la plage de temps de la disponibilité, l'inscription est refusée (RG-020).
 - L'inscription est possible sans paiement préalable.
 
 ## Règles liées
 
-RG-001, RG-006, RG-007, RG-015
+RG-001, RG-006, RG-007, RG-015, RG-020
 
 ## Critères d'acceptation
 
 - Étant donné une place libre sur chacun des 15 cours de la série, quand Aurélie inscrit l'élève avec un carnet de 15, alors l'élève apparaît sur les 15 cours.
 - Étant donné un cours de la série à 6 élèves, quand Aurélie tente l'inscription, alors elle est refusée.
-- Étant donné un élève qui n'a pas payé, quand Aurélie l'inscrit, alors l'inscription est acceptée et le carnet est en dette.
+- Étant donné un élève qui n'a pas payé, quand Aurélie l'inscrit, alors l'inscription est acceptée et le carnet est signalé impayé.

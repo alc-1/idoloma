@@ -15,5 +15,5 @@ RG-014, RG-015, RG-019
 
 ## Critères d'acceptation
 
-- Étant donné un carnet en dette, quand Aurélie saisit son paiement en cash, alors le carnet est marqué payé cash et la dette disparaît.
+- Étant donné un carnet impayé ou en dette, quand Aurélie saisit son paiement en cash, alors le carnet est marqué payé cash et l'impayé ou la dette disparaît.
 - Étant donné un paiement saisi avec un mauvais moyen, quand Aurélie le corrige, alors le moyen est mis à jour.

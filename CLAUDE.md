@@ -29,7 +29,7 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 - Avant de produire un document : lister les incohérences et zones floues, puis poser les questions par lots de 5 maximum jusqu'à lever les points bloquants.
 - Arborescence de docs/ :
   - sources/ : notes brutes (lecture seule)
-  - fonctionnel/ : 00-vision, 01-glossaire (rédigés), puis 02-acteurs, 03-cas-d-usage/, 04-regles-metier, 05-vues-et-legende (3 vues + code couleur, séparés des règles), 06-questions-ouvertes, 07-suivi-financier (phase 2)
+  - fonctionnel/ : 00-vision, 01-glossaire (rédigés), puis 02-acteurs, 03-cas-d-usage/, 04-regles-metier, 05-vues-et-legende (3 vues + fiche élève + légende, séparées des règles), 06-questions-ouvertes, 07-suivi-financier (phase 2)
   - adr/ : décisions d'architecture
 
 ## Décisions validées
@@ -37,10 +37,11 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 - Capacité d'un cours de groupe : 6 places.
 - Par défaut, 1 seul cours de groupe par jour ; plusieurs le même jour sont possibles mais exceptionnels.
 - Tailles de carnet : 5, 15, 30 et 60 cours.
-- Le paiement en retard reste autorisé : c'est un statut visible (« dette »), jamais un blocage.
+- Le paiement en retard reste autorisé : un carnet non payé est un impayé (aucun cours utilisé) ou une dette (au moins un cours utilisé), statut visible qui appelle un suivi d'Aurélie, jamais un blocage.
 - Vocabulaire : « carnet de cours » (jamais « abonnement ») ; « Disponibilité » (récurrente ou unique, sur une plage de temps, active ou archivée) pour ce qu'Aurélie ouvre ; « Cours » pour l'occurrence datée.
 - Report (l'action) et rattrapage (le cours de remplacement) : ne pas utiliser « déplacement ». Un élève est reporté sur un autre cours de groupe de la même semaine, y compris complet ; décompte inchangé ; cours d'origine conservé et barré ; rattrapage à la discrétion d'Aurélie, il utilise le carnet.
-- Retrait d'un cours : le carnet est utilisé par défaut ; absence justifiée et validée : carnet non utilisé et rattrapage possible sur un autre jour de la même semaine.
+- Absence (le terme « retrait » est abandonné) : l'élève absent libère sa place dans le cours ; le carnet est utilisé par défaut ; absence justifiée et validée : carnet non utilisé et rattrapage possible sur un autre jour de la même semaine.
+- Traçabilité : opérations conservées dans leur dernière version uniquement, pas de journal d'audit.
 - Disponibilité : définie sur une plage de temps, modifiée ou archivée sur une plage donnée ; refusé si un élève est impacté.
 - Cours qui n'ont pas lieu (vacances, maladie…) : la raison est conservée.
 - Rendez-vous privés : facturés à part, hors carnet.
@@ -54,15 +55,16 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 - Absence sans justification valide : le carnet est utilisé par défaut. Absence justifiée et validée par Aurélie : le carnet n'est pas utilisé.
 - Vocabulaire : ne pas utiliser « séance » ; on parle d'un carnet de cours, d'un élève qui va à un cours, et d'un carnet utilisé ou non.
 - Inscription : tous les cours du carnet sont générés à l'avance, une place libre est requise sur chacun (6 max).
+- Présence : par défaut présent, sauf absence marquée. Inscription dont la série dépasse la plage de la disponibilité : refusée.
 - Fin de carnet : l'élève peut continuer, cours rattachés à un nouveau carnet non payé (dette).
 - Paiement d'un carnet de cours de groupe : toujours sur le carnet entier.
-- Fermeture : le carnet n'est pas utilisé ; la série de l'élève est décalée (un cours ajouté en fin de série, qui exige une place libre ; le cas « complet » est ignoré, il ne se produit pas chez Aurélie). Une inscription qui traverse une fermeture est normale.
+- Fermeture : le carnet n'est pas utilisé ; pour chaque élève, Aurélie choisit au cas par cas de décaler la série (un cours ajouté en fin de série, qui exige une place libre ; le cas « complet » est ignoré, il ne se produit pas chez Aurélie) ou d'accorder un rattrapage. Une inscription qui traverse une fermeture est normale.
 - Nouveau carnet de fin de carnet : taille par défaut 5, modifiable une fois confirmée avec l'élève.
 - Rendez-vous privé : montant, statut payé ou non, moyen de paiement (en ligne ou cash).
 - Paiements : saisie manuelle par Aurélie, modifiable après coup.
 - Vues : quatre écrans (mois en lecture seule, semaine avec glisser-déposer uniquement, jour avec édition complète, fiche élève). Les états de la légende se cumulent. Mois : ni cours annulables ni fermetures.
-- Retrait d'un élève : au niveau d'un seul cours. Corrections par action inverse (pas d'annulation générique). Fiche élève V1 : nom et prénom seulement ; vue globale des dettes hors V1. « Se connecter » relève des ADR.
-- Légende des couleurs : à définir plus tard (celle de l'agenda papier est contradictoire).
+- Absence : au niveau d'un seul cours. Corrections par action inverse (pas d'annulation générique). Fiche élève V1 : nom et prénom seulement, avec saisie du paiement des carnets ; vue globale des impayés et dettes hors V1. « Se connecter » relève des ADR.
+- Légende des couleurs : proposée au mieux (best effort) lors de la maquette, puis ajustée ; celle de l'agenda papier est contradictoire.
 
 ## Questions ouvertes
 

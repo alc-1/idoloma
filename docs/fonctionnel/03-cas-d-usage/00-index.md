@@ -12,7 +12,7 @@ Acteur unique en V1 : Aurélie (voir [02-acteurs.md](../02-acteurs.md)). Règles
 | [UC-006](UC-006-gerer-rendez-vous-prive.md) | Gérer un rendez-vous privé |
 | [UC-007](UC-007-gerer-eleve.md) | Gérer un élève |
 | [UC-008](UC-008-inscrire-eleve.md) | Inscrire un élève |
-| [UC-009](UC-009-retirer-eleve-cours.md) | Retirer un élève d'un cours |
+| [UC-009](UC-009-retirer-eleve-cours.md) | Retirer un élève d'un cours (abandonné, fusionné dans UC-011) |
 | [UC-010](UC-010-reporter-eleve.md) | Reporter un élève (rattrapage) |
 | [UC-011](UC-011-enregistrer-absence.md) | Enregistrer une absence |
 | [UC-012](UC-012-accorder-rattrapage.md) | Accorder un rattrapage (abandonné, fusionné dans UC-010) |

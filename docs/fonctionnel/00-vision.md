@@ -12,7 +12,7 @@ Reproduire numériquement l'agenda papier tel qu'il existe, en le rendant plus f
 
 - Quels cours peuvent accueillir un élève ?
 - Où en est chaque élève dans son carnet de cours ?
-- Qui doit payer (statut de dette visible) ?
+- Qui doit payer (impayés et dettes visibles) ?
 - Quels rendez-vous privés sont prévus ?
 - À quelles dates un élève a-t-il été présent ?
 
@@ -20,23 +20,24 @@ Reproduire numériquement l'agenda papier tel qu'il existe, en le rendant plus f
 
 - **Planning** : disponibilités, cours de groupe, rendez-vous privés, avec leurs participants.
 - **Gestion des élèves et des carnets** : suivi de l'avancement (n° du cours / total du carnet : 5, 15, 30 ou 60).
-- **Gestion des paiements** : moyen de paiement (en ligne, cash) et statut de paiement par carnet. Le paiement en retard est autorisé et affiché comme dette, jamais bloqué.
-- **Traçabilité** : historique des opérations, des présences, des reports et des fermetures (avec leur raison).
+- **Gestion des paiements** : moyen de paiement (en ligne, cash) et statut de paiement par carnet. Le paiement en retard est autorisé et affiché comme impayé ou dette, jamais bloqué.
+- **Traçabilité** : présences, reports et fermetures (avec leur raison). Les opérations sont conservées dans leur dernière version uniquement, sans journal d'audit.
 - **Vues** : mois (lecture seule, disponibilités), semaine (détail et report par glisser-déposer au sein de la semaine), jour (édition complète).
 
 ## Phases
 
 1. **Digitalisation de l'agenda existant** (V1, périmètre ci-dessus).
 2. **Suivi financier** : sommes encaissées (en ligne / cash) par élève, par mois et en total actuel, pour que Aurélie détermine son salaire ; distinction entre entrées effectives (argent réellement entré) et entrées attendues (prestations données).
-3. **Réservation par les élèves** : choix des créneaux et paiement en ligne.
+3. **Réservation par les élèves** : choix des cours et paiement en ligne.
 
 ## Hors périmètre V1
 
 - Suivi financier agrégé (phase 2) et réservation par les élèves (phase 3).
 - Stages (événements de plusieurs jours).
+- Journal d'audit des modifications (RG-021).
 - Événements externes notés sur l'agenda papier (à ignorer).
 - Concept d'« élève fantôme » (abandonné).
-- Vue globale des dettes de l'atelier (liste des élèves à relancer) : voulue, mais pas en V1. La dette reste visible dans le planning et sur la fiche élève.
+- Vue globale des impayés et dettes de l'atelier (liste des élèves à relancer) : voulue, mais pas en V1. Ils restent visibles dans le planning et sur la fiche élève.
 - Contact et notes sur la fiche élève : la V1 ne conserve que le nom et le prénom.
 
 ## Utilisateurs
@@ -54,7 +55,7 @@ Les paramètres de l'atelier (6 places, carnets de 5/15/30/60, seuils d'alerte) 
 - Par défaut, 1 seul cours de groupe par jour ; plusieurs le même jour restent exceptionnels.
 - Un élève reporté dans la semaine suit un rattrapage : son décompte de carnet est inchangé et le cours d'origine est conservé et barré. Le rattrapage est accordé à la discrétion d'Aurélie.
 - Une disponibilité est définie sur une plage de temps ; la modifier ou l'archiver sur une plage donnée est refusé si un élève en est impacté.
-- Une période de fermeture (vacances, maladie…) conserve sa raison.
+- Une période de fermeture (vacances, maladie…) conserve sa raison ; pour chaque élève concerné, Aurélie choisit au cas par cas de décaler sa série ou de lui accorder un rattrapage.
 - Les rendez-vous privés sont facturés à part (hors carnet).
 
 ## Questions ouvertes
