@@ -4,7 +4,6 @@ Source unique des points non tranchés. Quand une question est résolue, reporte
 
 ## Règles métier
 
-- Grisage : faut-il distinguer visuellement « presque plein » (5) et « complet » (6) ?
 
 ## Vues
 

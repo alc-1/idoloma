@@ -51,7 +51,7 @@ Les paramètres de l'atelier (6 places, carnets de 5/15/30/60, seuils d'alerte) 
 - Capacité d'un cours de groupe : 6 places.
 - Par défaut, 1 seul cours de groupe par jour ; plusieurs le même jour restent exceptionnels.
 - Un élève déplacé dans la semaine garde son décompte de carnet ; le cours d'origine est conservé et barré.
-- Un rattrapage consomme une séance du carnet ; il est accordé à la discrétion d'Aurélie.
+- Un rattrapage utilise le carnet comme tout cours auquel l'élève participe ; il est accordé à la discrétion d'Aurélie.
 - Une période de fermeture (vacances, maladie…) conserve sa raison.
 - Les rendez-vous privés sont facturés à part (hors carnet).
 
