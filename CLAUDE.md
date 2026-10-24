@@ -34,23 +34,26 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 
 ## Décisions validées
 
-- Capacité d'un cours de groupe : 6 places.
-- Par défaut, 1 seul cours de groupe par jour ; plusieurs le même jour sont possibles mais exceptionnels.
+- Un cours est une plage horaire sur laquelle des élèves sont attendus (de groupe ou privé).
+- Un cours de groupe accueille au plus 7 élèves : 6 places d'inscription + 1 place de rattrapage ; premier arrivé, premier servi (un rattrapage placé reste).
+- Jamais plus d'un cours de groupe par jour ; un cours de groupe + un cours privé, ou deux cours privés, sont possibles.
+- Cours privé (le terme « rendez-vous privé » est abandonné) : inclut un ou plusieurs élèves identifiés, dont le nombre est mentionné ; les élèves y sont présents.
+- Un cours privé se paie en un seul paiement. Affichage : « Christelle 14h » pour un cours privé ; pour un cours de groupe, liste des élèves avec le décompte de leur carnet à côté.
+- Moyens de paiement : TWINT, QR-facture (paiements en ligne) ou cash.
 - Tailles de carnet : 5, 15, 30 et 60 cours.
 - Le paiement en retard reste autorisé : un carnet non payé est un impayé (aucun cours utilisé) ou une dette (au moins un cours utilisé), statut visible qui appelle un suivi d'Aurélie, jamais un blocage.
-- Vocabulaire : « carnet de cours » (jamais « abonnement ») ; « Disponibilité » (récurrente ou unique, sur une plage de temps, active ou archivée) pour ce qu'Aurélie ouvre ; « Cours » pour l'occurrence datée.
-- Report (l'action) et rattrapage (le cours de remplacement) : ne pas utiliser « déplacement ». Un élève est reporté sur un autre cours de groupe de la même semaine, y compris complet ; décompte inchangé ; cours d'origine conservé et barré ; rattrapage à la discrétion d'Aurélie, il utilise le carnet.
+- Vocabulaire : « carnet de cours » (jamais « abonnement ») ; « Disponibilité » (récurrente ou unique, sur une plage de temps, active ou archivée) pour ce qu'Aurélie ouvre ; « Cours » pour une plage horaire sur laquelle des élèves sont attendus.
+- Report (l'action) et rattrapage (le cours de remplacement) : ne pas utiliser « déplacement ». Un élève est reporté sur un autre cours de groupe de la même semaine, sur une place de rattrapage ; décompte inchangé ; cours d'origine conservé et barré ; rattrapage à la discrétion d'Aurélie, il utilise le carnet.
 - Absence (le terme « retrait » est abandonné) : l'élève absent libère sa place dans le cours ; le carnet est utilisé par défaut ; absence justifiée et validée : carnet non utilisé et rattrapage possible sur un autre jour de la même semaine.
 - Traçabilité : opérations conservées dans leur dernière version uniquement, pas de journal d'audit.
 - Disponibilité : définie sur une plage de temps, modifiée ou archivée sur une plage donnée ; refusé si un élève est impacté.
 - Cours qui n'ont pas lieu (vacances, maladie…) : la raison est conservée.
-- Rendez-vous privés : facturés à part, hors carnet.
+- Cours privés : facturés à part, hors carnet.
 - Hors V1 : stages, réservation par les élèves, événements externes de la photo (ignorés), « élèves fantômes » (concept abandonné).
 - Utilisateurs : Aurélie seule en V1, mais données ségréguées par atelier et par utilisateur dès la conception. Isolation totale : un compte et une instance dédiés par atelier, aucun croisement de données, même pour une même personne physique.
-- Paramètres (6 places, carnets 5/15/30/60, seuils) : fixes pour l'instant, configuration par atelier reportée.
-- Cours grisé à partir de 5 élèves (presque plein ou complet, capacité 6).
-- Cours mis en évidence comme annulable si moins de 3 élèves, 0 compris.
-- Rendez-vous privé : indépendant des cours de groupe, sur d'autres horaires, aucune place consommée.
+- Paramètres (6 places + 1 de rattrapage, carnets 5/15/30/60, seuils) : fixes pour l'instant, configuration par atelier reportée.
+- Cours grisé à partir de 5 élèves présents, annulable sous 3 élèves présents : les rattrapages comptent, les absents non.
+- Cours privé : indépendant des cours de groupe, sur d'autres horaires, aucune place consommée.
 - Un carnet n'expire pas : il reste valable tant qu'il reste des cours à utiliser.
 - Absence sans justification valide : le carnet est utilisé par défaut. Absence justifiée et validée par Aurélie : le carnet n'est pas utilisé.
 - Vocabulaire : ne pas utiliser « séance » ; on parle d'un carnet de cours, d'un élève qui va à un cours, et d'un carnet utilisé ou non.
@@ -60,7 +63,7 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 - Paiement d'un carnet de cours de groupe : toujours sur le carnet entier.
 - Fermeture : le carnet n'est pas utilisé ; pour chaque élève, Aurélie choisit au cas par cas de décaler la série (un cours ajouté en fin de série, qui exige une place libre ; le cas « complet » est ignoré, il ne se produit pas chez Aurélie) ou d'accorder un rattrapage. Une inscription qui traverse une fermeture est normale.
 - Nouveau carnet de fin de carnet : taille par défaut 5, modifiable une fois confirmée avec l'élève.
-- Rendez-vous privé : montant, statut payé ou non, moyen de paiement (en ligne ou cash).
+- Cours privé : montant, statut payé ou non, moyen de paiement (TWINT, QR-facture ou cash).
 - Paiements : saisie manuelle par Aurélie, modifiable après coup.
 - Vues : quatre écrans (mois en lecture seule, semaine avec glisser-déposer uniquement, jour avec édition complète, fiche élève). Les états de la légende se cumulent. Mois : ni cours annulables ni fermetures.
 - Absence : au niveau d'un seul cours. Corrections par action inverse (pas d'annulation générique). Fiche élève V1 : nom et prénom seulement, avec saisie du paiement des carnets ; vue globale des impayés et dettes hors V1. « Se connecter » relève des ADR.

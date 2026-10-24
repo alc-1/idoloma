@@ -13,14 +13,14 @@ Reproduire numériquement l'agenda papier tel qu'il existe, en le rendant plus f
 - Quels cours peuvent accueillir un élève ?
 - Où en est chaque élève dans son carnet de cours ?
 - Qui doit payer (impayés et dettes visibles) ?
-- Quels rendez-vous privés sont prévus ?
+- Quels cours privés sont prévus ?
 - À quelles dates un élève a-t-il été présent ?
 
 ## Périmètre V1
 
-- **Planning** : disponibilités, cours de groupe, rendez-vous privés, avec leurs participants.
+- **Planning** : disponibilités, cours de groupe, cours privés, avec leurs participants.
 - **Gestion des élèves et des carnets** : suivi de l'avancement (n° du cours / total du carnet : 5, 15, 30 ou 60).
-- **Gestion des paiements** : moyen de paiement (en ligne, cash) et statut de paiement par carnet. Le paiement en retard est autorisé et affiché comme impayé ou dette, jamais bloqué.
+- **Gestion des paiements** : moyen de paiement (TWINT, QR-facture ou cash) et statut de paiement par carnet. Le paiement en retard est autorisé et affiché comme impayé ou dette, jamais bloqué.
 - **Traçabilité** : présences, reports et fermetures (avec leur raison). Les opérations sont conservées dans leur dernière version uniquement, sans journal d'audit.
 - **Vues** : mois (lecture seule, disponibilités), semaine (détail et report par glisser-déposer au sein de la semaine), jour (édition complète).
 
@@ -51,12 +51,12 @@ Les paramètres de l'atelier (6 places, carnets de 5/15/30/60, seuils d'alerte) 
 
 ## Règles métier validées
 
-- Capacité d'un cours de groupe : 6 places.
-- Par défaut, 1 seul cours de groupe par jour ; plusieurs le même jour restent exceptionnels.
+- Un cours de groupe accueille au plus 7 élèves : 6 places d'inscription et 1 place de rattrapage.
+- Il n'y a jamais plus d'un cours de groupe par jour ; un cours de groupe et un cours privé, ou deux cours privés, le même jour sont possibles.
 - Un élève reporté dans la semaine suit un rattrapage : son décompte de carnet est inchangé et le cours d'origine est conservé et barré. Le rattrapage est accordé à la discrétion d'Aurélie.
 - Une disponibilité est définie sur une plage de temps ; la modifier ou l'archiver sur une plage donnée est refusé si un élève en est impacté.
 - Une période de fermeture (vacances, maladie…) conserve sa raison ; pour chaque élève concerné, Aurélie choisit au cas par cas de décaler sa série ou de lui accorder un rattrapage.
-- Les rendez-vous privés sont facturés à part (hors carnet).
+- Les cours privés sont facturés à part (hors carnet), incluent des élèves identifiés et mentionnent leur nombre.
 
 ## Questions ouvertes
 

@@ -9,7 +9,7 @@ Acteur unique en V1 : Aurélie (voir [02-acteurs.md](../02-acteurs.md)). Règles
 | [UC-003](UC-003-consulter-journee.md) | Consulter une journée |
 | [UC-004](UC-004-gerer-disponibilites.md) | Gérer les disponibilités |
 | [UC-005](UC-005-enregistrer-fermeture.md) | Enregistrer une fermeture |
-| [UC-006](UC-006-gerer-rendez-vous-prive.md) | Gérer un rendez-vous privé |
+| [UC-006](UC-006-gerer-cours-prive.md) | Gérer un cours privé |
 | [UC-007](UC-007-gerer-eleve.md) | Gérer un élève |
 | [UC-008](UC-008-inscrire-eleve.md) | Inscrire un élève |
 | [UC-009](UC-009-retirer-eleve-cours.md) | Retirer un élève d'un cours (abandonné, fusionné dans UC-011) |
@@ -19,4 +19,4 @@ Acteur unique en V1 : Aurélie (voir [02-acteurs.md](../02-acteurs.md)). Règles
 | [UC-013](UC-013-rattacher-cours-nouveau-carnet.md) | Rattacher un cours supplémentaire à un nouveau carnet |
 | [UC-014](UC-014-consulter-fiche-eleve.md) | Consulter la fiche élève |
 | [UC-015](UC-015-saisir-paiement-carnet.md) | Saisir ou modifier le paiement d'un carnet |
-| [UC-016](UC-016-saisir-paiement-rendez-vous-prive.md) | Saisir ou modifier le paiement d'un rendez-vous privé |
+| [UC-016](UC-016-saisir-paiement-cours-prive.md) | Saisir ou modifier le paiement d'un cours privé |

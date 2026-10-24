@@ -6,7 +6,7 @@
 
 ## Scénario nominal
 
-1. Aurélie saisit le paiement du carnet entier et son moyen (en ligne ou cash).
+1. Aurélie saisit le paiement du carnet entier et son moyen (TWINT, QR-facture ou cash).
 2. Elle peut le modifier après coup, moyen compris.
 
 ## Règles liées

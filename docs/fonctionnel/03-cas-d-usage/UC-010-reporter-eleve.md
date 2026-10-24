@@ -13,7 +13,8 @@
 ## Variantes et erreurs
 
 - Un cours d'une autre semaine est refusé.
-- Un cours complet est accepté.
+- Un cours à 6 élèves est accepté : l'élève prend la place de rattrapage.
+- Un cours à 7 élèves est refusé.
 - Pour corriger, Aurélie reporte l'élève dans l'autre sens (RG-019).
 
 ## Règles liées
@@ -22,6 +23,6 @@ RG-010, RG-011, RG-019
 
 ## Critères d'acceptation
 
-- Étant donné un élève inscrit le mardi et un cours complet le jeudi de la même semaine, quand Aurélie le reporte au jeudi, alors le report est accepté, le jeudi est un rattrapage, le cours du mardi est conservé et barré, et le décompte est inchangé.
+- Étant donné un élève inscrit le mardi et un cours du jeudi de la même semaine qui compte 6 élèves, quand Aurélie le reporte au jeudi, alors le report est accepté, le jeudi est un rattrapage, le cours du mardi est conservé et barré, et le décompte est inchangé.
 - Étant donné un cours d'une autre semaine, quand Aurélie y reporte l'élève, alors le report est refusé.
 - Étant donné une absence justifiée et validée, quand Aurélie reporte l'élève sur un autre jour de la même semaine, alors le carnet est utilisé par le rattrapage et non par le cours manqué.

@@ -5,23 +5,30 @@ Les identifiants sont stables : ne jamais renuméroter. Une règle abandonnée e
 ## Cours et capacité
 
 ### RG-001 – Capacité d'un cours de groupe
-Un cours de groupe accueille au plus 6 élèves par inscription. Un report vers un cours complet (RG-010) peut dépasser cette limite.
-- Étant donné un cours de groupe à 6 élèves, quand Aurélie inscrit un élève, alors l'inscription est refusée pour ce cours (voir RG-007).
+Un cours de groupe accueille au plus 7 élèves : 6 places d'inscription et 1 place de rattrapage. Une inscription fixe n'est donc possible que si le cours compte moins de 6 élèves ; un rattrapage est possible tant que le cours compte moins de 7 élèves. Premier arrivé, premier servi : un rattrapage déjà placé reste, même si une inscription fixe se présente ensuite.
+- Étant donné un cours de groupe à 6 élèves, quand Aurélie inscrit un élève de façon fixe, alors l'inscription est refusée pour ce cours (voir RG-007).
+- Étant donné un cours de groupe à 6 élèves, quand Aurélie accorde un rattrapage, alors il est accepté sur la place de rattrapage et le cours compte 7 élèves.
+- Étant donné un cours de groupe à 7 élèves, quand Aurélie ajoute un élève, alors l'ajout est refusé.
+- Étant donné un cours de groupe à 5 élèves dont des rattrapages, quand Aurélie accorde un rattrapage, alors il est accepté.
 
 ### RG-002 – Un cours de groupe par jour
-Par défaut, il y a au plus un cours de groupe par jour. Plusieurs cours de groupe le même jour restent possibles, à titre exceptionnel.
+Il y a au plus un cours de groupe par jour. Un cours de groupe et un cours privé le même jour sont possibles, ainsi que deux cours privés.
+- Étant donné un cours de groupe déjà présent un jour donné, quand Aurélie tente d'en ajouter un second le même jour, alors l'ajout est refusé.
+- Étant donné un cours de groupe un jour donné, quand Aurélie y ajoute un cours privé, alors l'ajout est accepté.
 
 ### RG-003 – Cours grisé
-Un cours de groupe est grisé à partir de 5 élèves (presque plein ou complet). Il n'y a pas de distinction entre 5 et 6.
-- Étant donné un cours à 4 élèves, quand un cinquième est inscrit, alors le cours devient grisé.
+Un cours de groupe est grisé à partir de 5 élèves présents (presque plein ou complet), quelle que soit la raison de leur présence (inscription fixe ou rattrapage). Il n'y a pas de distinction entre 5, 6 et 7.
+- Étant donné un cours à 4 élèves présents, quand un cinquième s'ajoute par inscription ou par rattrapage, alors le cours devient grisé.
 
 ### RG-004 – Cours annulable
-Un cours de groupe à moins de 3 élèves, y compris 0, est mis en évidence comme pouvant être annulé.
-- Étant donné un cours à 2 élèves, quand on consulte le planning, alors il est mis en évidence.
+Un cours de groupe à moins de 3 élèves présents, y compris 0, est mis en évidence comme pouvant être annulé, quelle que soit la raison de leur présence.
+- Étant donné un cours à 2 élèves présents, quand on consulte le planning, alors il est mis en évidence.
 - Étant donné un cours à 0 élève, quand on consulte le planning, alors il est mis en évidence.
+- Étant donné un cours à 3 élèves dont un est absent, quand on consulte le planning, alors il est mis en évidence.
 
-### RG-005 – Rendez-vous privé
-Un rendez-vous privé est une occurrence unique sur une période fixée dans la même journée. Il est indépendant des cours de groupe : il a lieu sur d'autres horaires et ne consomme aucune place d'un cours de groupe. Il est facturé à part, hors carnet.
+### RG-005 – Cours privé
+Un cours privé est une occurrence unique sur une période fixée dans la même journée. Il inclut un ou plusieurs élèves identifiés, dont le nombre est mentionné. Il est indépendant des cours de groupe : il a lieu sur d'autres horaires et ne consomme aucune place d'un cours de groupe. Il est facturé à part, hors carnet. Les élèves y sont présents (RG-016).
+- Étant donné un cours privé avec 2 élèves identifiés, quand Aurélie le crée, alors les deux élèves sont enregistrés et leur nombre est affiché.
 
 ## Carnet de cours
 
@@ -44,8 +51,9 @@ Un élève peut continuer à venir après avoir utilisé tous les cours de son c
 ## Report, absences, fermetures
 
 ### RG-010 – Report et rattrapage
-Aurélie peut reporter un élève d'un cours de groupe vers un autre cours de groupe de la même semaine, y compris un cours déjà complet. Le cours de destination est un rattrapage, accordé à la discrétion d'Aurélie. Le cours d'origine est conservé et barré pour tracer le report. Le décompte du carnet est inchangé : le cours d'origine n'utilise pas le carnet, le rattrapage l'utilise comme tout cours auquel l'élève participe.
-- Étant donné un élève inscrit le mardi et un cours complet le jeudi de la même semaine, quand Aurélie reporte l'élève au jeudi, alors le report est accepté, le jeudi est un rattrapage et le cours du mardi est conservé et barré.
+Aurélie peut reporter un élève d'un cours de groupe vers un autre cours de groupe de la même semaine, sur une place de rattrapage du cours de destination. Le cours de destination est un rattrapage, accordé à la discrétion d'Aurélie. Le cours d'origine est conservé et barré pour tracer le report. Le décompte du carnet est inchangé : le cours d'origine n'utilise pas le carnet, le rattrapage l'utilise comme tout cours auquel l'élève participe.
+- Étant donné un élève inscrit le mardi et un cours du jeudi de la même semaine qui compte 6 élèves, quand Aurélie reporte l'élève au jeudi, alors le report est accepté, le jeudi est un rattrapage et le cours du mardi est conservé et barré.
+- Étant donné un cours du jeudi qui compte déjà 7 élèves, quand Aurélie y reporte un autre élève, alors le report est refusé.
 - Étant donné un cours dans une autre semaine, quand Aurélie tente d'y reporter l'élève, alors le report est refusé.
 
 ### RG-011 – Absence
@@ -70,16 +78,17 @@ Le cours ajouté en fin de série exige une place libre ; le cas d'un cours comp
 ## Paiement
 
 ### RG-014 – Paiement d'un carnet
-Pour les cours de groupe, un paiement porte toujours sur un carnet entier. Le moyen de paiement est en ligne ou cash. Les paiements sont saisis manuellement par Aurélie et peuvent être modifiés après coup (moyen de paiement compris).
+Pour les cours de groupe, un paiement porte toujours sur un carnet entier. Le moyen de paiement est TWINT, QR-facture ou cash (TWINT et QR-facture sont des paiements en ligne). Les paiements sont saisis manuellement par Aurélie et peuvent être modifiés après coup (moyen de paiement compris).
 
 ### RG-015 – Impayé et dette
 Un élève peut être inscrit et suivre des cours sans avoir payé son carnet. Un carnet non payé est un impayé tant qu'aucun de ses cours n'est utilisé, et une dette dès qu'un de ses cours est utilisé. Ces deux statuts sont visibles, appellent un suivi d'Aurélie et ne bloquent jamais l'inscription ni la participation.
 - Étant donné un carnet non payé dont aucun cours n'est utilisé, quand Aurélie consulte l'élève, alors le carnet est signalé impayé.
 - Étant donné un carnet non payé dont un cours est utilisé, quand Aurélie consulte l'élève, alors le carnet est signalé en dette.
 
-### RG-018 – Paiement d'un rendez-vous privé
-Un rendez-vous privé, facturé à part, est enregistré avec un montant, un statut payé ou non, et un moyen de paiement (en ligne ou cash). Il est saisi manuellement par Aurélie et modifiable après coup.
-- Étant donné un rendez-vous privé non payé, quand Aurélie saisit le paiement et son moyen, alors le rendez-vous est marqué payé.
+### RG-018 – Paiement d'un cours privé
+Un cours privé, facturé à part, est enregistré avec un montant, un statut payé ou non, et un moyen de paiement (TWINT, QR-facture ou cash). Il se paie en un seul paiement, quel que soit le nombre d'élèves. Il est saisi manuellement par Aurélie et modifiable après coup.
+- Étant donné un cours privé à 2 élèves, quand Aurélie saisit le paiement, alors un seul paiement couvre le cours.
+- Étant donné un cours privé non payé, quand Aurélie saisit le paiement et son moyen, alors le cours privé est marqué payé.
 
 ## Disponibilités
 
@@ -97,8 +106,9 @@ Une action (report, absence, fermeture, paiement…) se corrige par l'action inv
 ## Traçabilité et isolation
 
 ### RG-016 – Historique des présences
-Un élève inscrit à un cours est présent par défaut, sauf absence marquée (RG-011). Toutes les dates auxquelles un élève a été présent peuvent être retracées.
+Un élève inscrit à un cours, de groupe ou privé, est présent par défaut, sauf absence marquée (RG-011). Toutes les dates auxquelles un élève a été présent peuvent être retracées.
 - Étant donné un élève inscrit à un cours sans absence marquée, quand le cours a eu lieu, alors l'élève est présent à cette date.
+- Étant donné un élève inscrit à un cours privé, quand le cours a eu lieu, alors l'élève est présent à cette date.
 - Étant donné un élève dont l'absence est marquée à un cours, quand Aurélie consulte l'historique, alors cette date n'apparaît pas comme présence.
 
 ### RG-021 – Dernière version uniquement

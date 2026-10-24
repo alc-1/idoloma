@@ -21,6 +21,6 @@ RG-002, RG-020
 ## Critères d'acceptation
 
 - Étant donné une disponibilité récurrente le mardi à 17h de janvier à septembre, quand Aurélie la crée, alors des cours de groupe sont proposés chaque mardi à 17h sur cette plage.
-- Étant donné une disponibilité déjà présente un jour donné, quand Aurélie en crée une seconde le même jour, alors elle est acceptée (RG-002 : exceptionnel mais possible).
+- Étant donné une disponibilité de cours de groupe déjà présente un jour donné, quand Aurélie en crée une seconde le même jour, alors la création est refusée (RG-002).
 - Étant donné une disponibilité sans élève inscrit à partir d'octobre, quand Aurélie la modifie à partir d'octobre, alors la modification est acceptée.
 - Étant donné un élève inscrit à un cours d'octobre, quand Aurélie tente de modifier ou d'archiver la disponibilité à partir d'octobre, alors l'opération est refusée.

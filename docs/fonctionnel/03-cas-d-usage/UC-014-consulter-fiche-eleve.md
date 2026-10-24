@@ -7,7 +7,7 @@
 ## Scénario nominal
 
 1. Aurélie ouvre la fiche d'un élève.
-2. Elle voit ses carnets (décompte, état de paiement, impayé, dette) et toutes les dates auxquelles l'élève a été présent.
+2. Elle voit ses carnets (décompte, état de paiement, impayé, dette) et toutes les dates auxquelles l'élève a été présent (cours de groupe et cours privés).
 3. Elle peut saisir ou modifier le paiement d'un carnet depuis la fiche (UC-015).
 
 ## Règles liées
