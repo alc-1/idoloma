@@ -4,6 +4,7 @@ Vocabulaire métier de référence. En cas de doute, ce document prévaut sur le
 
 | Terme | Définition |
 |---|---|
+| **Fiche élève** | Écran propre à un élève : ses carnets (décompte, paiement, dette) et l'historique de ses présences. |
 | **Atelier** | Structure qui donne les cours (aujourd'hui celui d'Aurélie). Les données (élèves, disponibilités, cours, carnets, paiements) sont totalement isolées par atelier : aucun croisement entre ateliers. |
 | **Utilisateur** | Compte qui se connecte à l'application, propre à un atelier (une même personne physique aurait un compte distinct par atelier). Aurélie en V1. |
 | **Élève** | Personne susceptible de s'inscrire à des cours. Existe indépendamment de ses carnets et de ses cours. |

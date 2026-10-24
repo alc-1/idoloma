@@ -60,6 +60,7 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 - Nouveau carnet de fin de carnet : taille par défaut 5, modifiable une fois confirmée avec l'élève.
 - Rendez-vous privé : montant, statut payé ou non, moyen de paiement (en ligne ou cash).
 - Paiements : saisie manuelle par Aurélie, modifiable après coup.
+- Vues : quatre écrans (mois en lecture seule, semaine avec glisser-déposer uniquement, jour avec édition complète, fiche élève). Les états de la légende se cumulent. Mois : ni cours annulables ni fermetures.
 - Légende des couleurs : à définir plus tard (celle de l'agenda papier est contradictoire).
 
 ## Questions ouvertes

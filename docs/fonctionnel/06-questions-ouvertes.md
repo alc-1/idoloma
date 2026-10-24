@@ -7,7 +7,9 @@ Source unique des points non tranchés. Quand une question est résolue, reporte
 
 ## Vues
 
-- Légende des couleurs : à définir plus tard (celle du papier est contradictoire).
+- Légende : choix des couleurs et marqueurs à définir (celle du papier est contradictoire).
+- Fiche élève : lecture seule, ou permet-elle aussi de saisir un paiement et de modifier un carnet ?
+- Premier cours d'un carnet et rose « à élucider » : écartés de la légende, à confirmer.
 
 ## Périmètre et architecture
 
