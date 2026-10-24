@@ -46,6 +46,11 @@ Application de suivi des cours de l'atelier d'Aurélie : agenda, carnets de cour
 - Hors V1 : stages, réservation par les élèves, événements externes de la photo (ignorés), « élèves fantômes » (concept abandonné).
 - Utilisateurs : Aurélie seule en V1, mais données ségréguées par atelier et par utilisateur dès la conception. Isolation totale : un compte et une instance dédiés par atelier, aucun croisement de données, même pour une même personne physique.
 - Paramètres (6 places, carnets 5/15/30/60, seuils) : fixes pour l'instant, configuration par atelier reportée.
+- Cours grisé à partir de 5 élèves (presque plein ou complet, capacité 6).
+- Cours mis en évidence comme annulable si moins de 3 élèves, 0 compris.
+- Rendez-vous privé : indépendant des cours de groupe, sur d'autres horaires, aucune place consommée.
+- Un carnet n'expire pas : il reste valable tant qu'il reste des séances.
+- Absence sans justification valide : la séance est consommée par défaut.
 - Légende des couleurs : à définir plus tard (celle de l'agenda papier est contradictoire).
 
 ## Questions ouvertes

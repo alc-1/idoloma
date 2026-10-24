@@ -4,10 +4,7 @@ Source unique des points non tranchés. Quand une question est résolue, reporte
 
 ## Règles métier
 
-- Seuil de grisage d'un cours : 5 ou 6 élèves ? (les notes disent 5+, la capacité est de 6)
-- Seuil d'alerte « cours annulable » : moins de 3 élèves (à confirmer).
-- Un rendez-vous privé occupe-t-il des places du cours de groupe du même jour ?
-- Durée de validité d'un carnet.
+- Grisage : faut-il distinguer visuellement « presque plein » (5) et « complet » (6) ?
 
 ## Vues
 

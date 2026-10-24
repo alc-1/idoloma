@@ -11,7 +11,7 @@ Vocabulaire métier de référence. En cas de doute, ce document prévaut sur le
 | **Cours** | Occurrence datée issue d'une disponibilité. Un cours de groupe accueille jusqu'à 6 élèves. |
 | **Cours de groupe** | Cours collectif, issu d'une disponibilité récurrente. Par défaut, 1 par jour au maximum. |
 | **Rendez-vous privé** | Cours privé : occurrence unique, sur une période fixée dans la même journée. Facturé à part, hors carnet. Affiché sous la forme « Christelle 14h ». |
-| **Carnet de cours** | Inscription d'un élève pour un nombre donné de cours (5, 15, 30 ou 60), à partir d'une date donnée, sur un créneau de groupe. Porte le suivi financier : est-il payé ? Remplace « abonnement ». |
+| **Carnet de cours** | Inscription d'un élève pour un nombre donné de cours (5, 15, 30 ou 60), à partir d'une date donnée, sur un créneau de groupe. Reste valable tant qu'il reste des séances (pas d'expiration). Porte le suivi financier : est-il payé ? Remplace « abonnement ». |
 | **Inscription** | Présence d'un élève sur un cours précis. Elle découle du carnet : le carnet inscrit l'élève aux cours, mais l'élève peut être déplacé dans la même semaine. |
 | **Décompte** | Avancement d'un élève dans son carnet, noté « n° du cours actuel / total » (ex. 12/15). Le dernier cours du carnet est mis en évidence. |
 | **Déplacement** | Changement de cours d'un élève dans la même semaine. Le décompte est inchangé ; le cours d'origine est conservé et barré. |
